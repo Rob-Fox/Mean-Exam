@@ -1,0 +1,25 @@
+<div>
+  <h1>{{ title }}</h1>
+</div>
+<div id='module_content'>
+  <h3>{{ tag_line }}</h3>
+  <div *ngIf='error_check'>
+    <p *ngFor='let item of error_arr'>Error: {{ item.bullshit }}</p>
+  </div>
+  <div>
+  <span class='errors' *ngIf='edit_product.Name.length < 3'>Name must be at least 3 characters</span><br>
+  <span class='errors' *ngIf='edit_product.quantity < 0'>Quantity must be at least 0</span><br>
+  <span class='errors' *ngIf='edit_product.price < 0'>Price must be at least 0</span><br>
+    <form (submit)='edit_submit(edit_product.ID)'>
+      Name:
+      <input type='text' name='e_name' [(ngModel)]='edit_product.Name'>
+      <br> Quantity:
+      <input type='number' min='0' name='e_type' [(ngModel)]='edit_product.quantity'>
+      <br> Price:
+      <input type='number' min='0' name='e_details' [(ngModel)]='edit_product.price'>
+      <br>
+      <input id='update_button' *ngIf='edit_product.Name.length > 2 && edit_product.quantity >= 0 && edit_product.price >= 0' type='submit' value='Update'>
+    </form>
+      <button (click)='reset_click(edit_product.ID)'>Reset</button> &nbsp;
+  </div>
+</div>

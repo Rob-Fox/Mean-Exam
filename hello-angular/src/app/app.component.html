@@ -1,0 +1,41 @@
+<h1>{{ title }}</h1>
+<div>
+  <h3>{{ tag_line }}</h3>
+
+</div>
+<router-outlet></router-outlet>
+
+
+
+
+<!-- 
+<button (click)='getProducts()'>Get Products</button>
+<div *ngFor='let item of products'>
+<ul>
+<li>Name: {{item.name}}</li>
+<button (click)='showProduct(item._id)'>Show Details</button><br>
+<button (click)='delete_product(item._id)'>Delete PRoduct</button>
+
+</ul>
+</div>
+<app-task *ngIf='product' [productToShow]='product'></app-task>
+<div>
+<h3> New Product: </h3>
+<p *ngIf='error_check'>
+  <span *ngFor='let item of error_arr'>Error: {{ item.bullshit }}</span>
+</p>
+<form (submit)='on_submit()'>
+  <p> {{new_product | json }} </p>
+  Name: <input type='text' name='new_product.name' [(ngModel)]='new_product.name'><br>
+  <input type='submit' value='Create product'>
+</form>
+</div>
+<div *ngIf='product'>
+<h3> Edit Product: </h3>
+<form (submit)='on_edit(author._id)'>
+  <p> {{ product.name }}</p>
+  Name: <input type='text' name='edit_product.name' [(ngModel)]='edit_product.Name' value={{product.Name}}><br>
+  <input type='submit' value='Edit product'>
+</form>
+</div> -->
+

@@ -1,0 +1,11 @@
+#module_content{
+    border: 1px solid black;
+    padding: 10px;
+    width: 430px;
+}
+.errors{
+    color: #913eff;
+}
+#create_button{
+    background-color: #66bbff;
+}

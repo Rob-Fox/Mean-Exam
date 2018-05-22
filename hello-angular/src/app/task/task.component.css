@@ -1,0 +1,31 @@
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}
+thead{
+    background-color: #d3d3d3;
+}
+
+#add_new{
+    display: inline-block;
+    float: right;
+
+}
+#tag_line{
+    display: inline-block;
+}
+#module_content{
+    border: 1px solid black;
+    padding: 10px;
+    width: 430px;
+}
+.actions{
+    width: 100px; 
+}
+.edit_button{
+    background-color: #f2dcc5;
+}
+.details_button{
+    background-color: #debcbd;
+}

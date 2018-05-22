@@ -1,0 +1,18 @@
+<div>
+  <h1>{{ title }}</h1>
+</div>
+<div id='module_content'>
+  <h3>{{ tag_line }}</h3>
+  <span class='errors' *ngIf='edit_product.quantity !== 0'>Quantity must be Zero to delete</span><br>
+  <span class='header'>Name: </span><span>{{ edit_product.Name }}</span>
+  <br>
+  <span class='header'>Quantity: </span><span>{{ edit_product.quantity }}</span>
+  <br>
+  <span class='header'>Price: </span><span>${{ edit_product.price }}</span>
+  <br>
+
+  <nav>
+    <button [routerLink]="['/products']">Back</button> &nbsp;
+    <button *ngIf='edit_product.quantity === 0' (click)='remove_product(edit_product.ID)'>Delete</button>
+  </nav>
+</div>

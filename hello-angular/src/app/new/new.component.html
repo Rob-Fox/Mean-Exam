@@ -1,0 +1,19 @@
+<div>
+  <h1>{{ title }}</h1>
+</div>
+<div id='module_content'>
+  <h3>{{ tag_line }}</h3>
+  <div *ngIf='error_check'>
+    <p *ngFor='let item of error_arr'>Error: {{ item.bullshit }}</p>
+  </div>
+  <span class='errors' *ngIf='new_product.Name.length < 3'>Name must be at least 3 characters</span><br>
+  <span class='errors' *ngIf='new_product.quantity < 0'>Quantity must be at least 0</span><br>
+  <span class='errors' *ngIf='new_product.price < 0'>Price must be at least 0</span><br>
+  <form (submit)='on_submit()'>
+    Name:<input type='text' name='new_product.Name' [(ngModel)]='new_product.Name'>
+    <br> Quantity:<input type='number' min='0' name='new_product.quantity' [(ngModel)]='new_product.quantity'>
+    <br> Price:<input type='number' min='0' name='new_product.price' [(ngModel)]='new_product.price'>
+    <br><button (click)='cancel_click()'>Cancel</button> &nbsp;
+    <input id='create_button' *ngIf='new_product.Name.length > 2 && new_product.quantity >= 0 && new_product.price >= 0' type='submit' value='Create product'>
+  </form>
+</div>

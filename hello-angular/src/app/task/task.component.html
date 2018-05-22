@@ -1,0 +1,28 @@
+<div id='title'>
+    <h1>{{ title }}</h1>
+</div>
+<div id='module_content'>
+    <h3 id='tag_line'>{{ tag_line }}</h3>
+    <button id='add_new' (click)='on_new()'>Add a new product</button>
+    <table>
+        <thead>
+            <td>ID</td>
+            <td>Name</td>
+            <td>QTY</td>
+            <td>Price</td>
+            <td class='actions'>Actions</td>
+        </thead>
+        <tbody *ngFor='let item of products'>
+            <tr>
+                <td>{{item.ID}}</td>
+                <td>{{item.Name}}</td>
+                <td>{{item.quantity}}</td>
+                <td>${{item.price}}</td>
+                <td class='actions'>
+                    <button (click)='on_edit(item.ID)' class='edit_button'>Edit</button>
+                    <button (click)='showProduct(item.ID)' class='details_button'>Details</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
